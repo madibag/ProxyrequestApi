@@ -158,7 +158,6 @@ def start():
         json.dump(proxy_json, outfile)
     print("Updated at "+ str(in_time.strftime('%H-%M-%S'))+" IST")
 start()
-check_if_alive()
 schedule.every(15).minutes.do(start)
 while True:
     # Checks whether a scheduled task is pending to run or not
