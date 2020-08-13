@@ -1,17 +1,21 @@
 #the request part
 
 from requests_html import HTMLSession
-import script
+#import script
 import random
 import json
 import time
 
-pr_url = json.loads('proxy.json')
+
 
 def make_request(url):
+	re = open('proxy.json', 'r').read()
+	pr_url = json.loads(re)
+	#
+	
 	session = HTMLSession()
 	leng = len(pr_url['data'])
-	rand = random.randint(0, leng)
+	rand = random.randint(1, leng)
 	proxy = pr_url['data'][rand]
 	r = session.get(url, proxies={'http' : proxy , 'https' : proxy})
 	r.html.render()
