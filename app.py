@@ -17,10 +17,11 @@ def result():
 @app.route('/surf/result/',methods=['GET'])
 def download():
     query = request.args.get('url')
+    print(query)
     proxygrabber.make_request(query)
     return co
 
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='0.0.0.0',port=5000,use_reloader=True)
+    app.run(host='0.0.0.0',use_reloader=True)
