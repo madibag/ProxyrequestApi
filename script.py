@@ -31,7 +31,7 @@ def free_proxy_list():
     k= table.find_all("tbody")
     for tbody in k:
     	for rows in tbody.find_all("tr"):
-    		if rows.find_all("td")[3].get_text() == "United States":
+    		if rows.find_all("td")[3].get_text() == "India":
     			ip_address = rows.find_all("td")[0].get_text()
     			host = rows.find_all("td")[1].get_text()
     			str1 = ip_address + ":" + host
@@ -97,8 +97,8 @@ def get_proxy():
         pass
 
     for p in proxy:
-        url = 'http://pubproxy.com/api/proxy?country=US&limit=20&https=True&user_agent=true'
-        while(len(proxies)<1000):
+        url = 'http://pubproxy.com/api/proxy?country=IN&limit=20&https=True&user_agent=true'
+        while(len(proxies)<100):
             try:
                 j=0
                 resp = requests.get(url=url,headers=user_agent,proxies={"http": p, "https": p})
@@ -117,7 +117,7 @@ def get_proxy():
     return list(set(proxies))
 
 def getproxylist():
-    url='https://api.getproxylist.com/proxy?country[]=US&lastTested=600'
+    url='https://api.getproxylist.com/proxy?country[]=IN&lastTested=600'
     p=requests.get(url).json()
     l=[]
     l.append(str(p['ip'])+':'+str(p['port']))
