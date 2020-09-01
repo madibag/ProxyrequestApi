@@ -17,7 +17,7 @@ def make_request(url):
 	leng = len(pr_url['data'])
 	rand = random.randint(1, leng)
 	proxy = pr_url['data'][rand]
-	r = session.get(url, proxies={'http' : proxy , 'https' : proxy})
+	r = session.get(url)
 	r.html.render()
 	co = (r.html)
 	return co
