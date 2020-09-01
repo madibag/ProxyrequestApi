@@ -2,7 +2,6 @@ requests
 schedule
 beautifulsoup4
 datetime
-pprint
 pytz
 Flask
 gunicorn
