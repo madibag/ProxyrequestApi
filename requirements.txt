@@ -1,4 +1,5 @@
 requests
+requests_html
 schedule
 beautifulsoup4
 datetime
